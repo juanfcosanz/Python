@@ -1,14 +1,19 @@
+# -*- coding: utf-8 -*-
+
 def tramite(valorVenta,IGV,porcentaje,ope):
-	IGV = IGV * valorVenta 
+	if valorVenta > 700:
+		IGV = IGV * valorVenta 
 
-	precioVenta = valorVenta + IGV
+		precioVenta = valorVenta + IGV
 
-	porcentaje = porcentaje * precioVenta
+		porcentaje = porcentaje * precioVenta
 
-	if ope == "suma":
-		cantidadGral =  precioVenta + porcentaje
-	elif ope == "resta":
-		cantidadGral =  precioVenta - porcentaje
+		if ope == "suma":
+			cantidadGral =  precioVenta + porcentaje
+		elif ope == "resta":
+			cantidadGral =  precioVenta - porcentaje
+	else:
+		cantidadGral = "No se puede aplicar tramite !!"
 
 	return cantidadGral
 
